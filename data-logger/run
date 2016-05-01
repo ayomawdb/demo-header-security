@@ -1,0 +1,4 @@
+mvn clean install
+unzip -d target/ROOT target/data-logger.war
+ABS_PATH=`cd "$1"; pwd`
+docker run -it --rm -p 8888:8080 -v $ABS_PATH/target/ROOT:/usr/local/tomcat/webapps/ROOT tomcat:8.0

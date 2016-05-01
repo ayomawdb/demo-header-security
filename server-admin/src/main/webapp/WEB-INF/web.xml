@@ -1,0 +1,70 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+
+	<filter>
+		<filter-name>SecurityFilter</filter-name>
+		<display-name>SecurityFilter</display-name>
+		<description></description>
+		<filter-class>org.wso2.security.demo.headersecurity.SecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<!-- <filter>
+		<filter-name>HttpHeaderSecurityFilter</filter-name>
+		<display-name>HttpHeaderSecurityFilter</display-name>
+		<filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HttpHeaderSecurityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+
+	<servlet>
+		<servlet-name>ControlServlet</servlet-name>
+		<display-name>ControlServlet</display-name>
+		<description></description>
+		<servlet-class>org.wso2.security.demo.headersecurity.ControlServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<display-name>LoginServlet</display-name>
+		<description></description>
+		<servlet-class>org.wso2.security.demo.headersecurity.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HomeServlet</servlet-name>
+		<display-name>HomeServlet</display-name>
+		<description></description>
+		<servlet-class>org.wso2.security.demo.headersecurity.HomeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<display-name>LogoutServlet</display-name>
+		<description></description>
+		<servlet-class>org.wso2.security.demo.headersecurity.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControlServlet</servlet-name>
+		<url-pattern>/control</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+</web-app>
